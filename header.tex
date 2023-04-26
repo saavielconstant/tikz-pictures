@@ -1,0 +1,61 @@
+\documentclass[addpoints,12pt]{exam}
+\pagestyle{empty}
+\runningfootrule
+\renewcommand{\subpartlabel}{(\thesubpart)}
+\qformat{\textbf{\thequestion.\qquad[Maximum mark: \totalpoints]\hfill}}
+\pointsdroppedatright
+\bracketedpoints
+\usepackage{tikz,tikz-3dplot}
+    \tikzset{%
+ wind turbine/.pic={
+  \tikzset{path/.style={fill=green, draw=white, ultra thick, line join=round}}
+  \path [path]
+    (-.25,0) arc (180:360:.25 and .0625) -- (.0625,3) -- (-.0625,3) -- cycle;
+  \foreach \i in {90, 210, 330}{
+    \ifcase#1
+    \or
+      \path [path, shift=(90:3), rotate=\i]
+        (.5,-.1875) arc (270:90:.5 and .1875) arc (90:-90:1.5 and .1875);
+    \or
+      \path [path, shift=(90:3), rotate=\i]
+        (0,0.125) -- (2,0.125) -- (2,0) -- (0.5,-0.375) -- cycle;
+    \or
+      \path [path, shift=(90:3), rotate=\i]
+        (0,-0.125) arc (180:0:1 and 0.125) -- ++(0,0.125) arc (0:180:1 and 0.25) -- cycle;
+    \fi
+  }
+  \path [path] (0,3) circle [radius=.25];
+}}
+%\usepackage{pst-plot,color}
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{polyglossia}
+	\setmainlanguage{english}
+\usepackage{color}
+	\colorgrids
+	\shadedsolutions
+	\CorrectChoiceEmphasis{\color{red}\bfseries}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {../images/} }
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=red]{hyperref}
+\newcounter{ExamPoints}\setcounter{ExamPoints}{0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{}
+\date{\today}
+\author{}
+\newcommand{\ms}[1]{\hfill \textbf{(#1)}}
+\newcommand{\pms}[1]{\begin{flushright}
+                      \textbf{[#1 marks]}
+                     \end{flushright}
+                     }
+\newcommand{\qms}[1]{\begin{flushright}
+                      \textbf{Total[#1 marks]}
+                     \end{flushright}
+                     }

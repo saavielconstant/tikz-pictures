@@ -1,0 +1,20 @@
+%  \input{header_link}
+%   \begin{document}
+     		\begin{tikzpicture}[scale=1]
+     		\draw[->,thick] (0,0)--(0,10) node[above]{North};
+     		\draw[->,thick] (0,0)--(15,0);
+     		\draw[thick] (0,0)--(30:15);
+     		\draw[thick] (0,5)--(30:15);
+     		\node at (0,0) {$\bullet$};
+     		\node[below] at (0,0) {$M$};
+     		\draw[fill=gray] (0,0)-- (30:1) arc (0:83:1);
+     		\node[above] at (50:1.5){$\theta$};
+     		\node[below right] at (30:7.5){$y$};
+     		\node at (30:15) {$\bullet$};
+     		\node[right] at (30:15){$I$};
+     		\node[left] at (0,5){$B$};
+     		\node[left] at (0,2.5) {\textbf{10 km}};
+     		\node[above] at (6,6.5) {$x$};
+     		\node at (0,5){$\bullet$};
+		\end{tikzpicture}
+%   \end{document}

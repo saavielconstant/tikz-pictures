@@ -1,0 +1,23 @@
+%  \input{header_link}
+%   \begin{document}
+     		\begin{tikzpicture}
+     		\draw[->,thick] (0,-7.5)--(0,7.5) node[above]{$y$};
+     		\draw[->,thick] (-7.5,0)--(7.5,0) node[right]{$x$};
+     		\foreach \x in {-7,-6,...,-1}{
+     		\draw (\x,0.1)--(\x,-0.1) node[below]{$\x $};
+     		}
+     		\foreach \x in {1,2,...,7}{
+     		\draw (\x,0.1)--(\x,-0.1) node[below]{$\x $};
+     		}
+     		\foreach \y in {1,2,...,7}{
+     		\draw (0.1,\y)--(-0.1,\y) node[left]{$\y $};
+     		}
+     		\foreach \y in {-7,-6,...,-1}{
+     		\draw (0.1,\y)--(-0.1,\y) node[left]{$\y $};
+     		}
+     		\node[below left] at (0,0) {$0$};     		\draw[domain=-7:-1.1,yscale=1,xscale=1,samples=100] plot({\x},{(-\x+1)/((\x*\x)-(2*\x)-3)});
+     		\draw[domain=-0.9:2.9,yscale=1,xscale=1,samples=100] plot({\x},{(-\x+1)/((\x*\x)-(2*\x)-3)});
+     		\draw[domain=3.1:7,yscale=1,xscale=1,samples=100] plot({\x},{(-\x+1)/((\x*\x)-(2*\x)-3)});
+     		\draw[dashed] (-1,-7)--(-1,7) node[above]{$x=-1$};
+     		\draw[dashed] (3,-7)--(3,7) node[above]{$x=3$};		\end{tikzpicture}
+%    \end{document}
